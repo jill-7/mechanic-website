@@ -268,11 +268,7 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .home {
-    width: 100vw;
-    
-
-  }
+  
   .hero {
     flex-direction: column;
     text-align: center;
