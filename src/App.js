@@ -7,10 +7,12 @@ import Services from './Services';
 import Providers from './Providers';
 import Contacts from './Contacts';
 import Footer from './Footer1';
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className='main-content'>
       <Navtemp />
       <Routes>
