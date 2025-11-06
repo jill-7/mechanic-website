@@ -66,6 +66,10 @@
   background: var(--accent-color);
   color: white;
 }
+.btn-primary.large:hover {
+  background: white;
+  color: var(--accent-color);
+}
 
 .hero-visual {
   flex: 1;
@@ -264,14 +268,23 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .home {
+    width: 100vw;
+    
+
+  }
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 10px;
+    width: 100vw;
   }
   
   .hero-content h1 {
     font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 16px;
   }
   
   .phone-mockup {
@@ -292,9 +305,13 @@
     justify-content: center;
   }
   
-  .btn-primary.large, .btn-secondary.large {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+  .btn-primary.large {
+    font-size: 16px;
+    margin-left: 15px;
+    width: 180px;
+  }
+  .btn-secondary.large {
+    font-size: 16px; 
   }
 }
 

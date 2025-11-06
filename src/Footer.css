@@ -26,8 +26,8 @@
 }
 
 .footer-logo {
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: 80px;
   border-radius: 6px;
   margin-bottom: 1.5rem;
 }

@@ -255,19 +255,26 @@
   align-items: center;
   flex-direction: column;
 
+
+}
+.customers {
+  text-align: center;
 }
 
 .flow-icon {
-  width: 200px;
+  width: 150px;
   border-radius: 6px;
-  flex-wrap: wrap;
   font-size: 3rem;
   margin-right: 1.5rem;
   flex-shrink: 0;
 }
 
 .flow-content {
-  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 8px;
 }
 
 .flow-content h3 {
@@ -285,7 +292,7 @@
 .flow-arrow {
   font-size: 2rem;
   color: #3498db;
-  margin: 0 1rem;
+  
   opacity: 0.6;
 }
 

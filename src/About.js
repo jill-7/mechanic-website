@@ -75,16 +75,16 @@ function About() {
         <div className="container">
           <h2 className="section-title">How Our Ecosystem Works</h2>
           <p className="section-subtitle">Seamless connection between those who need help and those who provide it</p>
-          <h3>For Customers</h3>
+          <h3 className='customers'>For Customers</h3>
           <div className="ecosystem-flow">
             <div className="flow-item">
               <div className="flow-icon">📱</div>
               <div className="flow-content">
                 <p>User registers or logs in</p>
-                
               </div>
-              <div className="flow-arrow">→</div>
+              
             </div>
+            <div className="flow-arrow">→</div>
 
             <div className="flow-item">
               <img src='/location.jpeg' className="flow-icon" />
@@ -92,8 +92,9 @@ function About() {
                 <p>Request a service and share location</p>
                 
               </div>
-              <div className="flow-arrow">→</div>
+              
             </div>
+            <div className="flow-arrow">→</div>
 
             <div className="flow-item">
               <img src='/mech.jpeg' className="flow-icon"/>
@@ -101,8 +102,9 @@ function About() {
                 <p>Track mechanic or tow truck</p>
                 
               </div>
-              <div className="flow-arrow">→</div>
+              
             </div>
+            <div className="flow-arrow">→</div>
 
             <div className="flow-item">
               <img src='/rating.png' className="flow-icon" />
@@ -110,6 +112,8 @@ function About() {
                 <p>Pay securely and rate service</p>
                
               </div>
+             
+              
             </div>
           </div>
 

@@ -15,9 +15,9 @@ function Services() {
       {/* Main Services */}
       <section className="main-services">
         <div className="container">
-          <div className="service-category">
-            <div className="service-info">
-              <h2>Car Repair Services</h2>
+          <div className="service-category" id='car-repair'>
+            <div className="service-info" >
+              <h2 >Car Repair Services</h2>
               <p>Professional automotive repair and maintenance services delivered to your location or at our partner garages.</p>
               <ul>
                 <li>Engine Diagnostics & Repair</li>
@@ -33,7 +33,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="service-category reverse">
+          <div className="service-category reverse" id='towing'>
             <div className="service-info">
               <h2>Towing Services</h2>
               <p>Reliable vehicle towing for emergencies, accidents, and transportation needs.</p>
@@ -50,7 +50,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="service-category">
+          <div className="service-category" id='heavy-machinery'>
             <div className="service-info">
               <h2>Heavy Machinery Lifting</h2>
               <p>Specialized equipment lifting and transportation services for industrial and commercial needs.</p>
@@ -66,7 +66,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="service-category reverse">
+          <div className="service-category reverse" id='emergency'>
             <div className="service-info">
               <h2>Emergency Roadside Assistance</h2>
               <p>Immediate help when you're stranded on the road.</p>
@@ -115,7 +115,7 @@ function Services() {
         <div className="container">
           <h2>Need Help Right Now?</h2>
           <p>Download our app and get assistance in minutes</p>
-          <button className="btn-primary large">Download the App</button>
+          <button className="download">Download the App</button>
         </div>
       </section>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FaFacebook, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -17,10 +17,10 @@ function Footer() {
               Your trusted partner for emergency roadside assistance, car repairs, and towing services across Kenya.
             </p>
             <div className="footer-social">
-              <a href="https://www.facebook.com/share/1FDhMh2LtP/" rel='noreferrer' aria-label="Facebook"><FaFacebook className="icon" /></a>
+            <a href="https://web.facebook.com/profile.php?id=61583263268404" rel='noreferrer' aria-label="Facebook"><FaFacebook className="icon" /></a>
             <a href="https://www.instagram.com/kchomes_tours_and_travel?igsh=MXJpcGtnM2s5ejNzNQ==" rel='noreferrer' target='_blank' aria-label="Instagram"><FaInstagram className="icon" /></a>
             <a href="https://x.com/KcHomesTours?t=BVpLITcxJd0ykpYwDQATEQ&s=09" rel='noreferrer' aria-label="Twitter"><FaTwitter className="icon" /></a>
-            <a href="https://chat.whatsapp.com/F8d3eQoHBOzHXZfVXOErPY?mode=r_t" rel='noreferrer' target="_blank" aria-label="WhatsApp"><FaWhatsapp className="icon" /></a>
+            
             </div>
           </div>
 
@@ -32,7 +32,7 @@ function Footer() {
               <li><a href="/about">About Us</a></li>
               <li><a href="/services">Services</a></li>
               <li><a href="/providers">Become a Provider</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/contacts">Contact</a></li>
             </ul>
           </div>
 
@@ -40,11 +40,11 @@ function Footer() {
           <div className="footer-links">
             <h3 className="footer-heading">Our Services</h3>
             <ul className="footer-list">
-              <li><a href="#">Roadside Assistance</a></li>
-              <li><a href="#">Car Repair</a></li>
-              <li><a href="#">Car Towing</a></li>
-              <li><a href="#">Heavy Machinery</a></li>
-              <li><a href="#">Emergency Help</a></li>
+              <li><a href="services#emergency">Roadside Assistance</a></li>
+              <li><a href="services#car-repair">Car Repair</a></li>
+              <li><a href="services#towing">Car Towing</a></li>
+              <li><a href="services#heavy-machinery">Heavy Machinery</a></li>
+              <li><a href="services#emergency">Emergency Help</a></li>
             </ul>
           </div>
 
@@ -102,6 +102,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
