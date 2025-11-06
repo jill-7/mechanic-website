@@ -87,7 +87,7 @@ function About() {
             <div className="flow-arrow">→</div>
 
             <div className="flow-item">
-              <img src='/location.jpeg' className="flow-icon" />
+              <img src='/location.jpeg' className="flow-icon" alt='location' />
               <div className="flow-content">
                 <p>Request a service and share location</p>
                 
@@ -97,7 +97,7 @@ function About() {
             <div className="flow-arrow">→</div>
 
             <div className="flow-item">
-              <img src='/mech.jpeg' className="flow-icon"/>
+              <img src='/mech.jpeg' className="flow-icon" alt='mech'/>
               <div className="flow-content">
                 <p>Track mechanic or tow truck</p>
                 
@@ -107,7 +107,7 @@ function About() {
             <div className="flow-arrow">→</div>
 
             <div className="flow-item">
-              <img src='/rating.png' className="flow-icon" />
+              <img src='/rating.png' className="flow-icon" alt='rating' />
               <div className="flow-content">
                 <p>Pay securely and rate service</p>
                

@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navtemp from './Navtemp';
-import Home from './Home';
+import Home from './Homee';
 import About from './About';
 import Services from './Services';
 import Providers from './Providers';

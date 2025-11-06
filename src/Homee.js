@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 
-function Home() {
+function Homee() {
   return (
     <div className="home">
       {/* Hero Section */}
@@ -87,4 +87,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Homee;
