@@ -11,7 +11,7 @@
   margin-top: 80px;
 }
 
-/* Hero Section - Updated to Grey Theme */
+/* Hero */
 .hero {
   display: flex;
   align-items: center;
@@ -120,7 +120,7 @@
   100% { transform: translateX(100%); }
 }
 
-/* Services Section */
+/* Services */
 .services {
   padding: 5rem 2rem;
   background: var(--white);
@@ -173,7 +173,7 @@
   line-height: 1.6;
 }
 
-/* How It Works Section */
+/* How It Works */
 .how-it-works {
   padding: 5rem 2rem;
   background: var(--light-grey);
@@ -225,7 +225,7 @@
   line-height: 1.6;
 }
 
-/* CTA Section */
+/* CTA  */
 .cta-section {
   padding: 5rem 2rem;
   background: var(--primary-grey);

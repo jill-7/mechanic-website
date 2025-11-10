@@ -52,7 +52,7 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      {/* Interactive Hero */}
+      {/* Hero */}
       <section className="contact-hero-section">
         <div className="contact-hero-container">
           <div className="contact-hero-text">
@@ -180,7 +180,7 @@ function Contact() {
         </div>
       </section>
 
-      {/* FAQ Section with Dropdown */}
+      {/* FAQ */}
       <section className="contact-faq-section">
         <div className="contact-container">
           <h2 className="contact-faq-title">Frequently Asked Questions</h2>

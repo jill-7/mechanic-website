@@ -5,11 +5,11 @@ function About() {
   return (
     <div className="about-page">
       
-      {/* Hero Section with Animated Background */}
+      {/* Animated Background */}
       <section className="about-hero">
         <div className="hero-video-background">
           <div className="video-overlay"></div>
-          {/* This would be your video/gif later */}
+          {/* Planning to replace with maybe a gif or video */}
           <div className="placeholder-animation">
             <div className="floating-cars">
               <div className="car car-1">🚗</div>
@@ -30,7 +30,7 @@ function About() {
         </div>
       </section>
 
-      {/* Mission & Vision - Side by Side */}
+      {/* Mission and Vision */}
       <section className="mission-vision-section">
         <div className="container">
           <div className="mv-grid">
@@ -70,7 +70,8 @@ function About() {
         </div>
       </section>
 
-      {/* How It Works - Animated Steps */}
+      {/* How it works */}
+      {/* Reminder to change these images */ }
       <section className="system-works-section">
         <div className="container">
           <h2 className="section-title">How Our Ecosystem Works</h2>
@@ -158,7 +159,7 @@ function About() {
         </div>
       </section>
 
-      {/* Core Values - Interactive Cards */}
+      {/* Core Values */}
       <section className="values-section">
         <div className="container">
           <h2 className="section-title">Our Core Values</h2>
@@ -187,7 +188,7 @@ function About() {
         </div>
       </section>
 
-      {/* Team Section - Placeholder for real photos */}
+      {/* Team Section */}
       <section className="team-section">
         <div className="container">
           <h2 className="section-title">The Minds Behind the Mission</h2>

@@ -1,6 +1,3 @@
-// This file will handle all communication with the backend
-// For now, we use mock data - backend person will replace this later
-
 // Mock function to simulate API call
 const simulateAPICall = (data, success = true, delay = 1000) => {
   return new Promise((resolve, reject) => {
@@ -27,7 +24,7 @@ export const uploadFile = async (file) => {
   console.log('Mock uploading file:', file.name);
   await simulateAPICall(null, true, 500);
   
-  // Return a mock file URL - backend will replace with real cloud storage URL
+  // Return a mock file URL 
   return `https://mock-storage.com/files/${Date.now()}-${file.name}`;
 };
 
@@ -35,12 +32,11 @@ export const uploadFile = async (file) => {
 export const submitApplication = async (applicationData) => {
   console.log('Submitting application:', applicationData);
   
-  // In real implementation, this will send data to your backend API
-  // For now, we simulate API call
+  // simulate API call
   return await simulateAPICall(applicationData);
 };
 
-// Get application status (for later use)
+// application status 
 export const getApplicationStatus = async (applicationId) => {
   return await simulateAPICall({ status: 'under_review' });
 };

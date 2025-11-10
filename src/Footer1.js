@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         
-        {/* Main Footer Content */}
+        {/* Main Footer */}
         <div className="footer-main">
           
           {/* Brand Column */}

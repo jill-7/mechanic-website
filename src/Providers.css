@@ -8,7 +8,7 @@
   padding: 0 2rem;
 }
 
-/* Animated Hero Section */
+/* Animated section */
 .providers-hero-section {
   height: 100vh;
   background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
@@ -154,7 +154,7 @@
   100% { transform: translateX(-50%) translateY(16px); opacity: 0; }
 }
 
-/* Stats Section */
+/* Stats */
 .providers-stats-section {
   padding: 5rem 2rem;
   background: #ecf0f1;
@@ -191,7 +191,7 @@
   font-size: 1.1rem;
 }
 
-/* Benefits Section */
+/* Benefits */
 .providers-benefits-section {
   padding: 5rem 2rem;
   background: white;
@@ -256,7 +256,7 @@
   line-height: 1.6;
 }
 
-/* Timeline Section */
+/* Timeline */
 .providers-timeline-section {
   padding: 5rem 2rem;
   background: #2c3e50;
@@ -324,7 +324,7 @@
   line-height: 1.6;
 }
 
-/* CTA Section */
+/* CTA */
 .providers-cta-section {
   padding: 6rem 2rem;
   background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);

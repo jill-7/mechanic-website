@@ -22,7 +22,7 @@ function ProviderApplication() {
     vehicleRegistration: '',
     vehicleCapacity: '',
     
-    // Documents - will store file URLs after upload
+    // Documents which will store file URLs after upload
     idDocumentUrl: '',
     certificationDocumentUrl: '',
     vehicleDocumentUrl: '',
@@ -39,7 +39,7 @@ function ProviderApplication() {
   const [error, setError] = useState('');
   const [uploadProgress, setUploadProgress] = useState({});
 
-  // Handle text/select inputs
+  // select inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     
@@ -48,11 +48,11 @@ function ProviderApplication() {
       [name]: value
     }));
     
-    // Clear error when user starts typing
+    
     if (error) setError('');
   };
 
-  // Handle checkbox arrays (service types, operating areas)
+  // Handles the checkbox arrays 
   const handleArrayChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -62,7 +62,7 @@ function ProviderApplication() {
     }));
   };
 
-  // Handle file uploads
+  // Handles file uploads
   const handleFileUpload = async (file, fieldName) => {
     if (!file) return;
     
@@ -127,7 +127,7 @@ function ProviderApplication() {
     setError('');
 
     try {
-      // Submit to backend (currently mock service)
+      // Submit to backend which is currently a mock version
       const result = await submitApplication(formData);
       
       if (result.success) {
@@ -211,7 +211,7 @@ function ProviderApplication() {
       )}
 
       <form onSubmit={handleSubmit} className="application-form">
-        {/* Step 1: Personal Information */}
+        {/* Personal Information */}
         {currentStep === 1 && (
           <div className="form-step">
             <h2>Personal Information</h2>
@@ -292,7 +292,7 @@ function ProviderApplication() {
           </div>
         )}
 
-        {/* Step 2: Professional Information */}
+        {/* Professional Information */}
         {currentStep === 2 && (
           <div className="form-step">
             <h2>Professional Details</h2>
@@ -358,7 +358,7 @@ function ProviderApplication() {
                 />
               </div>
 
-              {/* Vehicle Information - Only show if towing is selected */}
+              {/* Vehicle Information that only show if towing is selected */}
               {formData.serviceType.includes('towing') && (
                 <>
                   <div className="form-group">
@@ -418,7 +418,7 @@ function ProviderApplication() {
           </div>
         )}
 
-        {/* Step 3: Documents Upload */}
+        {/* Documents Upload */}
         {currentStep === 3 && (
           <div className="form-step">
             <h2>Required Documents</h2>
@@ -468,7 +468,7 @@ function ProviderApplication() {
           </div>
         )}
 
-        {/* Step 4: Review & Submit */}
+        {/* Review and Submit */}
         {currentStep === 4 && (
           <div className="form-step">
             <h2>Review Your Application</h2>

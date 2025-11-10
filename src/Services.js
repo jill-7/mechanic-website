@@ -4,7 +4,7 @@ import './Services.css';
 function Services() {
   return (
     <div className="services-page">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="services-hero">
         <div className="services-hero-content">
           <h1>Our Services</h1>
@@ -110,7 +110,7 @@ function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA  */}
       <section className="services-cta">
         <div className="container">
           <h2>Need Help Right Now?</h2>

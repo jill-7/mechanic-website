@@ -18,7 +18,7 @@ function Homee() {
         <div className="hero-visual">
           <div className="phone-mockup">
             <div className="app-screen">
-              {/* This will show app preview */}
+              {/*  app preview */}
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ function Homee() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works */}
       <section className="how-it-works">
         <h2>How It Works</h2>
         <div className="steps">
@@ -73,7 +73,7 @@ function Homee() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA  */}
       <section className="cta-section">
         <div className="cta-content">
           <h2>Help is in Your Pocket</h2>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Providers() {
   return (
     <div className="providers-page">
-      {/* Animated Hero Section */}
+      {/* Animated section */}
       <section className="providers-hero-section">
         <div className="providers-hero-background">
           <div className="providers-floating-tools">
@@ -30,7 +30,7 @@ function Providers() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats */}
       <section className="providers-stats-section">
         <div className="providers-container">
           <div className="providers-stats-grid">
@@ -83,7 +83,7 @@ function Providers() {
         </div>
       </section>
 
-      {/* How It Works - Timeline */}
+      {/* timeline */}
       <section className="providers-timeline-section">
         <div className="providers-container">
           <h2 className="providers-section-title">Start Earning in 3 Simple Steps</h2>
@@ -113,7 +113,7 @@ function Providers() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA  */}
       <section className="providers-cta-section">
         <div className="providers-cta-background">
           <div className="providers-cta-content">
