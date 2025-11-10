@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 function Homee() {
   return (
@@ -11,7 +12,7 @@ function Homee() {
           <p>Connect with verified mechanics, towing, and heavy lifting experts anytime, anywhere.</p>
           <div className="hero-buttons">
             <button className="btn-primary">Request a Mechanic Now</button>
-            <button className="btn-secondary">Become a Provider</button>
+            <Link to="/apply" className="btn-secondary">Become a Provider</Link>
           </div>
         </div>
         <div className="hero-visual">

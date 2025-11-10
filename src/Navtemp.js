@@ -28,7 +28,7 @@ function Navtemp() {
         
         <div className="nav-actions">
           <button className="btn-secondary">Download App</button>
-          <button className="btn-primary">Become a Provider</button>
+          <Link to="/apply" className="btn-primary">Become a Provider</Link>
         </div>
 
         <div className="hamburger" onClick={toggleSidebar}>

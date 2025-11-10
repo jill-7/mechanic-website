@@ -8,6 +8,8 @@ import Providers from './Providers';
 import Contacts from './Contacts';
 import Footer from './Footer1';
 import ScrollToTop from "./ScrollToTop";
+import ProviderApplication from './ProviderApplication';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/providers' element={<Providers />}/>
         <Route path='/contacts' element={<Contacts />} />
+        <Route path='/apply' element={<ProviderApplication />} />
         <Route />
 
        

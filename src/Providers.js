@@ -1,5 +1,6 @@
 import React from 'react';
 import './Providers.css';
+import { Link } from 'react-router-dom';
 
 function Providers() {
   return (
@@ -20,7 +21,7 @@ function Providers() {
             <span className="providers-title-line providers-title-accent">Professional Team</span>
           </h1>
           <p className="providers-hero-subtitle">Turn your skills into steady income with Kenya's fastest-growing automotive network</p>
-          <button className="providers-cta-pulse">Start Earning Today →</button>
+          <Link to="/apply" className="providers-cta-pulse">Start Earning Today →</Link>
         </div>
         <div className="providers-scroll-indicator">
           <div className="providers-mouse">
@@ -119,7 +120,7 @@ function Providers() {
             <h2>Ready to Join Kenya's Leading Automotive Network?</h2>
             <p>Start your application today and get approved within 24 hours</p>
             <div className="providers-cta-buttons">
-              <button className="providers-btn-primary">Apply Now</button>
+              <Link to="/apply" className="providers-btn-primary">Apply Now</Link>
               <button className="providers-btn-secondary">Download Provider App</button>
             </div>
           </div>

@@ -60,6 +60,7 @@
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
   background: transparent;
+  text-decoration: none;
 }
 
 .btn-secondary.large:hover {

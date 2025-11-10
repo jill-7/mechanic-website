@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -21,6 +21,8 @@ function Footer() {
             <a href="https://web.facebook.com/profile.php?id=61583263268404" rel='noreferrer' aria-label="Facebook"><FaFacebook className="icon" /></a>
             <a href="https://www.instagram.com/kchomes_tours_and_travel?igsh=MXJpcGtnM2s5ejNzNQ==" rel='noreferrer' target='_blank' aria-label="Instagram"><FaInstagram className="icon" /></a>
             <a href="https://x.com/KcHomesTours?t=BVpLITcxJd0ykpYwDQATEQ&s=09" rel='noreferrer' aria-label="Twitter"><FaTwitter className="icon" /></a>
+            <a href="https://x.com/KcHomesTours?t=BVpLITcxJd0ykpYwDQATEQ&s=09" rel='noreferrer' aria-label="Whatsapp"><FaWhatsapp className="icon" /></a>
+            
             
             </div>
           </div>
