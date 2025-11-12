@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contacts.css';
+import { submitContactForm } from './api/contactAPI';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,9 +19,17 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    const result = await submitContactForm(formData);
+    
+    if (result.success) {
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      alert('Failed to send message');
+    }
   };
 
   const toggleFAQ = (index) => {
@@ -153,7 +162,7 @@ function Contact() {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="contact-submit-btn">
+                <button onClick={handleSubmit} type="submit" className="contact-submit-btn">
                   Send Message →
                 </button>
               </form>
