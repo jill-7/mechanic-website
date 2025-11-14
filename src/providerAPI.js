@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase } from './supabaseClient';
 
 /**
  * Upload a file to Supabase Storage
@@ -126,6 +126,24 @@ export const getApplicationById = async (applicationId) => {
 
   } catch (error) {
     console.error('Error fetching application:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// connecting this with dashboard
+export const getProviders = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('provider_applications')
+      .select('*')
+      .eq('status', 'approved')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    return { success: true, data };
+  } catch (error) {
+    console.error('Error fetching providers:', error);
     return { success: false, error: error.message };
   }
 };
