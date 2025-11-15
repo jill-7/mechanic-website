@@ -13,7 +13,7 @@ export const uploadFile = async (file) => {
     const filePath = `documents/${fileName}`;
 
     // Upload file to Supabase Storage
-    const { data, error } = await supabase.storage
+    const { /*data ,*/ error } = await supabase.storage
       .from('provider-documents')
       .upload(filePath, file, {
         cacheControl: '3600',
