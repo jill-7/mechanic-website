@@ -2,39 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
 import { getApplications, updateApplicationStatus, getProviders } from './providerAPI';
+import { sendApprovalEmail, sendRejectionEmail } from './api/emailAPI';
 
 // Predefined rejection reasons
-const REJECTION_REASONS = [
-  'Incomplete documentation submitted',
-  'Insufficient professional experience',
-  'Safety and background verification concerns', 
-  'Service area currently at capacity',
-  'Professional certification requirements not met',
-  'Other (please specify below)'
-];
-
-// Email templates
-const DEFAULT_EMAIL_TEMPLATES = {
-  approval: `Dear {name},
-
-Congratulations! Your application to join Mechanic On Call as a {service} provider has been approved.
-
-Welcome to our professional network! You can now start accepting service requests through our platform.
-
-Best regards,
-Mechanic On Call Team`,
-
-  rejection: `Dear {name},
-
-Thank you for your interest in joining Mechanic On Call. After careful review, we regret to inform you that your application cannot be approved at this time.
-
-Reason: {reason}
-
-We encourage you to gain more experience and reapply in the future.
-
-Best regards,
-Mechanic On Call Team`
-};
+  const REJECTION_REASONS = [
+    'Incomplete documentation submitted',
+    'Insufficient professional experience',
+    'Safety and background verification concerns', 
+    'Service area currently at capacity',
+    'Professional certification requirements not met',
+    'Other (please specify below)'
+  ];
 
 const DashboardHome = ({ stats, applications, onReviewApplication }) => {
   return (
@@ -247,9 +225,8 @@ const ProvidersPage = ({ providers, onViewProviderDetails }) => {
   );
 };
 
-const SettingsPage = ({ onLogout }) => {
+const SettingsPage = ({ onLogout, emailTemplates, setEmailTemplates }) => {
   const [activeTab, setActiveTab] = useState('email');
-  const [emailTemplates, setEmailTemplates] = useState(DEFAULT_EMAIL_TEMPLATES);
   const [admins, setAdmins] = useState([
     { id: 1, email: 'admin@mechaniconcall.com', role: 'Owner' },
     { id: 2, email: 'jill@mechaniconcall.com', role: 'Admin' }
@@ -312,11 +289,11 @@ const SettingsPage = ({ onLogout }) => {
                     ...prev,
                     approval: e.target.value
                   }))}
-                  rows="8"
+                  rows="12"
                   placeholder="Enter approval email template..."
                 />
                 <div className="template-variables">
-                  <strong>Available variables:</strong> {'{name}'}, {'{service}'}
+                  <strong>Available variables:</strong> [Name],[Services], [Experience], [Email], [Phone]
                 </div>
               </div>
 
@@ -328,11 +305,11 @@ const SettingsPage = ({ onLogout }) => {
                     ...prev,
                     rejection: e.target.value
                   }))}
-                  rows="8"
+                  rows="12"
                   placeholder="Enter rejection email template..."
                 />
                 <div className="template-variables">
-                  <strong>Available variables:</strong> {'{name}'}, {'{service}'}, {'{reason}'}
+                  <strong>Available variables:</strong> [Name], [Services], [Experience], [Rejection Reason], [Date]
                 </div>
               </div>
 
@@ -935,6 +912,50 @@ function AdminDashboard({ admin, onLogout }) {
   });
   const [loading, setLoading] = useState(true);
 
+  const [emailTemplates, setEmailTemplates] = useState({
+    approval: `Dear [Name],
+
+      Congratulations! Your application to join Mechanic On Call as a [Services] provider has been approved.
+
+      Welcome to our professional network! You can now start accepting service requests through our platform.
+
+      Your Services: [Services]
+      Years of Experience: [Experience]
+
+      Next Steps:
+      1. Download our provider app
+      2. Complete your profile setup  
+      3. Set your availability
+      4. Start receiving service requests
+
+      If you have any questions, feel free to contact our support team at support@mechaniconcall.com.
+
+      Best regards,
+      Mechanic On Call Team
+    `,
+
+    rejection: `Dear [Name],
+
+      Thank you for your interest in joining Mechanic On Call as a [Services] provider.
+
+      After careful review of your application, we regret to inform you that we cannot approve your application at this time.
+
+      Reason: [Rejection Reason]
+
+      Application Details:
+      - Services Applied For: [Services]
+      - Experience Level: [Experience]
+      - Application Date: [Date]
+
+      We encourage you to gain more experience and reapply in the future. You may submit a new application after 90 days.
+
+      If you have questions about this decision, please contact our support team at support@mechaniconcall.com.
+
+      Best regards,
+      Mechanic On Call Team
+    `
+  });
+
    const handleViewProviderDetails = (provider) => {
     setSelectedProvider(provider);
     setProviderDetailsModalOpen(true);
@@ -1044,29 +1065,67 @@ function AdminDashboard({ admin, onLogout }) {
 
   const handleApproveApplication = async (applicationId) => {
     try {
+      // 1. Update status in database
       const result = await updateApplicationStatus(applicationId, 'approved');
+      
       if (result.success) {
-        // Refresh the data
+        // 2. Send personalized email
+        const emailResult = await sendApprovalEmail(
+          emailTemplates.approval,  // Template with placeholders
+          selectedApplication        // Actual applicant data
+        );
+        
+        if (emailResult.success) {
+          console.log('✅ Approval email sent successfully!');
+          alert('Application approved and email sent!');
+        } else {
+          console.error('❌ Failed to send email:', emailResult.error);
+          alert('Application approved but email failed to send. Check backend.');
+        }
+        
+        // 3. Refresh data
         await loadApplications();
         await loadProviders();
-        console.log('Application approved:', applicationId);
+        closeReviewModal();
       }
     } catch (error) {
       console.error('Failed to approve application:', error);
+      alert('Failed to approve application');
     }
   };
 
   const handleRejectApplication = async (applicationId, reason) => {
     try {
+      // 1. Update status in database
       const result = await updateApplicationStatus(applicationId, 'rejected', reason);
+      
       if (result.success) {
+        // 2. Send personalized email
+        const emailResult = await sendRejectionEmail(
+          emailTemplates.rejection,  // Template with placeholders
+          selectedApplication,        // Actual applicant data
+          reason                     // Rejection reason
+        );
+        
+        if (emailResult.success) {
+          console.log('✅ Rejection email sent successfully!');
+          alert('Application rejected and email sent!');
+        } else {
+          console.error('❌ Failed to send email:', emailResult.error);
+          alert('Application rejected but email failed to send. Check backend.');
+        }
+        
+        // 3. Refresh data
         await loadApplications();
-        console.log('Application rejected:', applicationId, 'Reason:', reason);
+        closeReviewModal();
       }
     } catch (error) {
       console.error('Failed to reject application:', error);
+      alert('Failed to reject application');
     }
   };
+
+  
 
   const closeReviewModal = () => {
     setReviewModalOpen(false);
