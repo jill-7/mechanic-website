@@ -8,7 +8,7 @@ function Homee() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Mechanic on Call. Rescue in Minutes.</h1>
+          <h1>Skybridge technologies ltd. Rescue in Minutes.</h1>
           <p>Connect with verified mechanics, towing, and heavy lifting experts anytime, anywhere.</p>
           <div className="hero-buttons">
             <button className="btn-primary">Request a Mechanic Now</button>
