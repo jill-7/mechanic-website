@@ -995,14 +995,20 @@
     grid-template-columns: 1fr;
   }
   
-  .table-header, .table-row {
+  .table-header {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 1.2rem;
     padding: 1rem;
+    display: flex;
+    
+  }
+  .table-row {
+    gap: 0.3rem;
+    
   }
   
   .applications-table.full .table-header,
-  .applications-table.full .table-row {
+  .applications-table.full  {
     grid-template-columns: 1fr;
   }
   
@@ -1044,6 +1050,9 @@
   
   .admin-profile {
     display: none;
+  }
+  .dashboard-home {
+    width: 90vw;
   }
 }
 

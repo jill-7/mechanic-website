@@ -92,7 +92,7 @@ function Footer() {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              © 2025 Mechanic On Call. All rights reserved.
+              © 2025 SKYBRIDGE TECHNOLOGIES . All rights reserved.
             </div>
             <div className="footer-legal">
               <a href="/privacy">Privacy Policy</a>

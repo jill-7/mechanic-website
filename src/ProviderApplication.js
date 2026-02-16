@@ -508,7 +508,11 @@ function ProviderApplication() {
                     <div className="review-item">
                       <strong>Vehicle Documents:</strong> {formData.vehicleDocumentUrl ? '✅ Uploaded' : '❌ Missing'}
                     </div>
+                   
                   )}
+                   <div className="review-item">
+                    <strong>Business License:</strong> {formData.businessLicenseUrl ? '✅ Uploaded' : '❌ Missing'}
+                  </div>
                 </div>
               </div>
             </div>
@@ -531,7 +535,7 @@ function ProviderApplication() {
               <button 
                 type="submit" 
                 className="btn-submit"
-                disabled={loading || !formData.idDocumentUrl || !formData.certificationDocumentUrl}
+                //disabled={loading || !formData.idDocumentUrl || !formData.certificationDocumentUrl}
               >
                 {loading ? 'Submitting...' : 'Submit Application'}
               </button>
@@ -564,7 +568,7 @@ const DocumentUpload = ({ title, description, onFileUpload, uploadStatus, requir
       
       <input
         type="file"
-        accept="image/*,.pdf,.doc,.docx"
+        accept="image/*,.pdf,.doc,.docx,.jpg,.jpeg,.png"
         onChange={handleFileChange}
         className="file-input"
         id={`file-${title}`}
