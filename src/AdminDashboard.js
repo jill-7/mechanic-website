@@ -912,7 +912,7 @@ function AdminDashboard({ admin, onLogout }) {
   });
   const [loading, setLoading] = useState(true);
 
-  const [emailTemplates, setEmailTemplates] = useState({
+  const [emailTemplates, /*setEmailTemplates*/] = useState({
     approval: `Dear [Name],
 
       Congratulations! Your application to join Mechanic On Call as a [Services] provider has been approved.
